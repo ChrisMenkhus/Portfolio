@@ -3,18 +3,24 @@ import styled from 'styled-components'
 const Style = styled.div`
     h1 {
         font-size: 5rem;
-        line-height: 4rem;
+        line-height: 5rem;
+        margin-bottom: -0.5rem;
+        padding: 0;
+        letter-spacing: 0.25rem;
+
     }
     h2 {
         font-size: 4rem;
         font-weight: 100;
-        line-height: 3.5rem;
         text-align: left;
+        line-height: 3rem;
     }
     h3 {
         font-size: 1.9rem;
         font-weight: 400;
-        /* line-height: 3rem; */
+        line-height: 1.5rem;
+        margin-top: 0;
+        padding-top: 0.3rem;
     }
     h4 {
         font-size: 2rem;
@@ -31,11 +37,13 @@ const Style = styled.div`
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 0.5rem;
-
+            line-height: 1rem;
         }
         h2 {
             font-size: 4rem;
             text-align: center;
+        line-height: 5rem;
+
         }
         h3 {
             font-size: 1.5rem;
@@ -51,12 +59,15 @@ const Style = styled.div`
         h1 {
             font-size: 2.1rem;
             text-align: center;
-            margin-bottom: 0.5rem;
-
+            /* margin-bottom: 0.5rem; */
+            line-height: 0.5rem;
         }
         h2 {
             font-size: 3.3rem;
             text-align: center;
+        line-height: 1rem;
+        padding-bottom: 2rem;
+
         }
         h3 {
             font-size: 1rem;

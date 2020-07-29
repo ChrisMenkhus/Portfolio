@@ -6,6 +6,8 @@ export default function Layout({children}) {
     <React.Fragment>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@299&display=swap" rel="stylesheet"></link>
+
       </Head>
       <Navbar/>
         {children}
@@ -20,6 +22,7 @@ export default function Layout({children}) {
         }
         html {
             height: 100vh;
+            font-family: 'Epilogue', sans-serif;
         }
         body {
             height: 100%;
@@ -29,7 +32,7 @@ export default function Layout({children}) {
         main {
           display: flex;
           width: 100%;
-          height: 100%;
+          height: calc(100% - 3rem);
         }
         #__next {
           height: 100%;
