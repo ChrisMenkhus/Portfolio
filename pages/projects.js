@@ -39,7 +39,8 @@ export default function Projects(props) {
     "CSS-Gradient Generator", 
     "Be Martian",
     "Color It X", 
-    "Screen Grabber"
+    "Screen Grabber",
+    "Portfolio"
   ]
 
   items.sort((a,b) => { 
