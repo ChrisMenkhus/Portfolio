@@ -29,7 +29,7 @@ export default function Projects(props) {
     items.push(res)
   })
 
-  console.log(items[2].data.stack[0]);
+  console.log(items.map((res, i)=>res.data.name[0].text));
 
   const correctorder = [
     "Dungeon Hero", 
