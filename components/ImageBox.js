@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
 const Style = styled.div`
-    /* height: ${p => p.height ? p.height : '20rem'};
-    width: ${p => p.width ? p.width : 'auto'}; */
-    /* min-width: 300px;
-    max-width: 800px; */
     width: 100%;
     height: auto;
 
