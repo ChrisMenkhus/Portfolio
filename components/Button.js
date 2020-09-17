@@ -7,8 +7,8 @@ const Style = styled.div`
     width: auto;
 
     button {
-        height: 2rem;
-        width: 8rem;
+        height: 3rem;
+        width: 12rem;
       display: flex;
       margin: auto;
       padding: 0;
@@ -23,9 +23,13 @@ const Style = styled.div`
 
     span {
         width: 100%;
+        height: 100%;
         margin-top: 0.2rem;
         text-align: left;
         margin-left: 1rem;
+        margin: auto;
+        text-align: center;
+        padding: 0.7rem 0;
     }
 
     .icon {

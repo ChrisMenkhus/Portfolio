@@ -33,7 +33,7 @@ export default function Home() {
         </Cta>
         <FlexBox width='100%' margin='2rem 0 0.3rem' >
           <Box justify='flex-start'>
-            <label>Connect <span id='wave'>👋</span></label>
+            <label>Connect </label>
           </Box>
           <Box justify='flex-end'>
             <label>Resume</label>
@@ -56,7 +56,7 @@ export default function Home() {
       </main>
         <BottomButton>
         <FlexBox width='100%' >
-          <Button margin='-7rem 2rem 0 auto' 
+          <Button margin='2rem auto 6rem auto'
             img={IosArrowForward}
             handleClick={()=>Redirect('/projects')}
           >Projects</Button>
