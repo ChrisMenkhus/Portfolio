@@ -13,11 +13,16 @@ export default function Layout({children}) {
         {children}
       <style jsx global>  
       {`
+        :root {
+          --background: #F8F8FF;
+          --backgroundReplace: #F8F8FF;
+          --dark: #0D0D0D;
+        }
         * {
             box-sizing: border-box;
             margin: 0; padding: 0;
             user-select: none;
-            color: white;
+            color: var(--dark);
             text-align: center;
         }
         html {
@@ -26,7 +31,7 @@ export default function Layout({children}) {
         }
         body {
             height: 100%;
-            background-color: #0D0D0D;
+            background-color: var(--background);
             display: flex;
         }
         main {

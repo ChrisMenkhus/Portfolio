@@ -42,14 +42,14 @@ export default function Home() {
         <FlexBox width='100%'>
           <Box margin='auto auto 0 auto' justify='flex-start'>
             <ul>
-            <li><LogoGithub onClick={()=>window.open('https://github.com/ChrisMenkhus')} className='icon' color='white'/></li>
-            <li><LogoLinkedin onClick={()=>window.open('https://www.linkedin.com/in/chris-menkhus-ab27201a0/')} className='icon' color='white' /></li>
-            <li><IosMail onClick={()=>window.open('mailto:menkhus.chris@gmail.com')} className='icon' color='white'/></li>
+            <li><LogoGithub onClick={()=>window.open('https://github.com/ChrisMenkhus')} className='icon' color='black'/></li>
+            <li><LogoLinkedin onClick={()=>window.open('https://www.linkedin.com/in/chris-menkhus-ab27201a0/')} className='icon' color='black' /></li>
+            <li><IosMail onClick={()=>window.open('mailto:menkhus.chris@gmail.com')} className='icon' color='black'/></li>
             </ul>
           </Box>
           <Box margin='auto auto 0 auto' justify='flex-end'>
             <ul>
-            <li><MdDownload onClick={()=>window.open('https://docs.google.com/document/d/1eHd2vTMKE_DPJ53QVGX3gXprzzZJu4fhQ6hztDTzdDo/edit?usp=sharing')} className='icon' color='white'/></li>
+            <li><MdDownload onClick={()=>window.open('https://docs.google.com/document/d/1eHd2vTMKE_DPJ53QVGX3gXprzzZJu4fhQ6hztDTzdDo/edit?usp=sharing')} className='icon' color='black'/></li>
             </ul>
           </Box>
         </FlexBox>

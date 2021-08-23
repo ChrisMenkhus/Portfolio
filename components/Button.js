@@ -15,7 +15,6 @@ const Style = styled.div`
       color: black;
       background-color: #9105FF;
       font-size: 1.3rem;
-      color: white;
       border: none;
     transition: all 0.1s;
 
@@ -30,6 +29,7 @@ const Style = styled.div`
         margin: auto;
         text-align: center;
         padding: 0.7rem 0;
+        color: white;
     }
 
     .icon {
@@ -37,8 +37,10 @@ const Style = styled.div`
         display: flex;
         margin: auto 1rem auto 0;
     }
+
     overflow: none;
-      button:hover {
+
+    button:hover {
         transform: scale(1.1);
           outline: none;
       }

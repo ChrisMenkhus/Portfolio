@@ -55,7 +55,7 @@ const Style = styled.div`
         }
     }
 
-    @media only screen and (max-width: 330px) {
+    @media only screen and (max-width: 370px) {
         h1 {
             font-size: 2.1rem;
             text-align: center;

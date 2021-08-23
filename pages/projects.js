@@ -61,9 +61,9 @@ export default function Projects(props) {
 
                     <div id='logo-container'>
                     {data.stack[0].css ?
-                    <img className='logo' src='/icons/logo-css3.svg' /> : null }
+                    <img className='logo' src='/icons/logo-css3.svg' color='black' /> : null }
                     {data.stack[0].html ?
-                    <img className='logo' src='/icons/logo-html5.svg' /> : null }
+                    <img className='logo' src='/icons/logo-html5.svg' fill='black' /> : null }
                     {data.stack[0].js ?
                     <img className='logo' src='/icons/logo-javascript.svg' /> : null }
                     {data.stack[0].react ?
@@ -103,6 +103,7 @@ export default function Projects(props) {
       <style jsx>
         {`
            main {
+
              opacity: 0;
              animation: fadein 2s forwards;
              animation-delay: 0.5s;
@@ -124,13 +125,23 @@ const ResponsiveFlex = styled.div`
   height: 100%;
   display: flex;
   padding: 4rem;
+  margin-bottom: 10rem;
   filter: grayscale(${p => p.blur ? '100%' : '0'}) blur(${p => p.blur ? '5px' : '0'});
   overflow-y: ${p => p.blur ? 'hidden' : 'visible'};
+
   flex-wrap: wrap;
 
     @media only screen and (max-width: 700px) {
-            padding: 0.2rem;
-            }  
+      padding: 0.2rem;
+    }  
+
+    @media only screen and (min-width: 1200px) {
+      margin: 0rem 8rem;
+    }  
+
+    @media only screen and (min-width: 2800px) {
+      margin: 0rem 16rem;
+    }  
 
     .item {
       width: 100%;
@@ -156,7 +167,13 @@ const ResponsiveFlex = styled.div`
         margin-bottom: 1rem;
       
         }
+
+        :last-child {
+          padding-bottom: 12rem;
+        }
     }
+
+
 
    
 
@@ -175,14 +192,16 @@ const ResponsiveFlex = styled.div`
     .logo {
         width: 1.6rem;
         margin: auto 0.2rem;
+       
     }
 
     #description {
       text-align: center;
       font-size: 1.3rem;
+      overflow: hidden;
         height: 50%;
         padding: 2rem 4rem 0rem;
-        margin: 0 4rem;
+        margin: 0 4rem 1rem;
         @media only screen and (max-width: 700px) {
           font-size: 0.8rem;
           height: auto;
