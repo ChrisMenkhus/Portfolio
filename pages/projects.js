@@ -171,7 +171,7 @@ const ResponsiveFlex = styled.div`
 
       @media only screen and (max-width: 900px) {
             flex-direction: column;
-            margin: 2rem auto;
+            margin: 2rem 0.5rem;
             }  
 
         h1 {     
@@ -199,6 +199,7 @@ const ResponsiveFlex = styled.div`
         height: 100%;
         display: flex;
         flex-direction: column;
+
 
 
     }
