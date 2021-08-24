@@ -212,6 +212,9 @@ const ResponsiveFlex = styled.div`
         margin-top: auto;
         margin-bottom: 1rem;
 
+      margin: 0 0 0.5rem auto;
+
+
     }
 
     #button-container {
@@ -219,9 +222,14 @@ const ResponsiveFlex = styled.div`
       height: auto;
       display: flex; flex-direction: row;
       justify-content: right;
+      flex-wrap: wrap;
       
+
+      margin: 0 0 0 auto;
+
+
       button {
-          margin: auto;
+
         }
     }
 
