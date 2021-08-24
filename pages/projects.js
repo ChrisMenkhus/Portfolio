@@ -42,9 +42,9 @@ export default function Projects(props) {
   }
 
   const TruncateString = (length, str) => {
-    let truncString = str.substring(0,110);
+    let truncString = str.substring(0,length);
     truncString = truncString.substring(0, truncString.lastIndexOf(" "));
-    return truncString + '...';
+    return truncString;
   }
 
   return (
@@ -56,6 +56,8 @@ export default function Projects(props) {
         <ResponsiveFlex>
           {items.map((res, i) => {
             let data = res.data;
+
+            const [showReadMore, SetShowReadMore] = useState();
             return(
                 <div className='item'>
                     <div className='gallery_item' onClick={()=>{setSelectedProject(res)}}>
@@ -68,8 +70,18 @@ export default function Projects(props) {
                       
 
                     <p id='description'>
-                      {TruncateString(25, data.description[0].text)}               
+                      {showReadMore ? data.description[0].text : 
+                      TruncateString(115, data.description[0].text)}
+                      {data.description[0].text.length >= 115 ? '....' : ''}   
+                      <br/><br/>
+                      {data.description[0].text.length >= 115 ? 
+                      <a onClick={()=>{SetShowReadMore(!showReadMore)}}>{showReadMore ? 'read less..' : 'read more..'}</a>: null }
                     </p>
+
+
+
+
+
                     <div id='logo-container'>
                       {data.stack[0].css ?
                       <img className='logo' src='/icons/logo-css3.svg' color='black' /> : null }
@@ -212,7 +224,7 @@ const ResponsiveFlex = styled.div`
         margin-top: auto;
         margin-bottom: 1rem;
 
-      margin: 0 0 0.5rem auto;
+      margin: 0 1rem 0.5rem auto;
 
 
     }
@@ -225,7 +237,7 @@ const ResponsiveFlex = styled.div`
       flex-wrap: wrap;
       
 
-      margin: 0 0 0 auto;
+      margin: 0 0.5rem 0 auto;
 
 
       button {
@@ -243,10 +255,15 @@ const ResponsiveFlex = styled.div`
       text-align: left;
       font-size: 1.3rem;
       overflow: hidden;
-        height: 50%;
-        padding: 0.25rem;
-        /* margin: 0 4rem 1rem; */
-        margin: 0.25rem 1rem auto 1rem;
+      height: 50%;
+      padding: 0.25rem;
+      /* margin: 0 4rem 1rem; */
+      margin: 0.25rem 1rem auto 1rem;
+
+      a {
+        color: purple;
+        cursor: pointer;
+      }
         @media only screen and (max-width: 700px) {
           font-size: 1rem;
           height: auto;
