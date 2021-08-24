@@ -29,7 +29,7 @@ export default function Home() {
         <Cta>
           <h2>HELLO, I AM</h2>
           <h1>CHRIS MENKHUS</h1>
-          <h3>A PROFESSIONAL <span>{'<CODER>'}</span> & UI/UX <span>DESIGNER</span>.</h3>
+          <h3>PROFESSIONAL <span>{'<CODER>'}</span> & UI/UX <span>DESIGNER</span>.</h3>
         </Cta>
         <FlexBox width='100%' margin='2rem 0 0.3rem' >
           <Box justify='flex-start'>

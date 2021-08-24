@@ -13,11 +13,11 @@ const Style = styled.div`
         width: 600px;
         height: 100%;
 
-    border: 1px solid black;
+        border: 1px solid black;
 
 
         @media only screen and (max-width: 700px) {
-            width: 80vw;
+            width: 94vw;
         }  
 
         

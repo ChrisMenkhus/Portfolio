@@ -41,6 +41,12 @@ export default function Projects(props) {
     router.push(path)
   }
 
+  const TruncateString = (length, str) => {
+    let truncString = str.substring(0,110);
+    truncString = truncString.substring(0, truncString.lastIndexOf(" "));
+    return truncString + '...';
+  }
+
   return (
     <React.Fragment>
       <Head>
@@ -59,28 +65,35 @@ export default function Projects(props) {
                 
                     <h1>{data.name[0].text}</h1>
 
+                      
+
+                    <p id='description'>
+                      {TruncateString(25, data.description[0].text)}               
+                    </p>
                     <div id='logo-container'>
-                    {data.stack[0].css ?
-                    <img className='logo' src='/icons/logo-css3.svg' color='black' /> : null }
-                    {data.stack[0].html ?
-                    <img className='logo' src='/icons/logo-html5.svg' fill='black' /> : null }
-                    {data.stack[0].js ?
-                    <img className='logo' src='/icons/logo-javascript.svg' /> : null }
-                    {data.stack[0].react ?
-                    <img className='logo' src='/icons/logo-react.svg' /> : null }
-                    {data.stack[0].express ?
-                    <img className='logo' src='/icons/logo-expressjs.svg' /> : null }
-                    {data.stack[0].next ?
-                    <img className='logo' src='/icons/logo-nextjs.svg' /> : null }
-                    {data.stack[0].node ?
-                    <img className='logo' src='/icons/logo-nodejs.svg' /> : null }
+                      {data.stack[0].css ?
+                      <img className='logo' src='/icons/logo-css3.svg' color='black' /> : null }
+                      {data.stack[0].html ?
+                      <img className='logo' src='/icons/logo-html5.svg' fill='black' /> : null }
+                      {data.stack[0].js ?
+                      <img className='logo' src='/icons/logo-javascript.svg' /> : null }
+                      {data.stack[0].react ?
+                      <img className='logo' src='/icons/logo-react.svg' /> : null }
+                      {data.stack[0].express ?
+                      <img className='logo' src='/icons/logo-expressjs.svg' /> : null }
+                      {data.stack[0].next ?
+                      <img className='logo' src='/icons/logo-nextjs.svg' /> : null }
+                      {data.stack[0].node ?
+                      <img className='logo' src='/icons/logo-nodejs.svg' /> : null }
+                    </div>
+                    <div id='button-container'>
+                      {data.websitelink.url ? 
+                      <Button
+                      margin={'0'} 
+                      handleClick={()=>window.open(data.websitelink.url)}
+                      img={IosGlobeOutline}>Visit</Button> : null }
                     </div>
 
-                    <p id='description'>{data.description[0].text}</p>
-                    {data.websitelink.url ? 
-                    <Button 
-                    handleClick={()=>window.open(data.websitelink.url)}
-                    img={IosGlobeOutline}>Visit</Button> : null }
 
                     </div>
                 </div>
@@ -103,7 +116,8 @@ export default function Projects(props) {
       <style jsx>
         {`
            main {
-
+             margin: 0;
+             padding: 0;
              opacity: 0;
              animation: fadein 2s forwards;
              animation-delay: 0.5s;
@@ -124,53 +138,56 @@ const ResponsiveFlex = styled.div`
   width: auto;
   height: 100%;
   display: flex;
-  padding: 4rem;
+  /* padding: 4rem; */
+  padding: 0rem;
+  margin: 0rem;
   margin-bottom: 10rem;
   filter: grayscale(${p => p.blur ? '100%' : '0'}) blur(${p => p.blur ? '5px' : '0'});
   overflow-y: ${p => p.blur ? 'hidden' : 'visible'};
 
   flex-wrap: wrap;
 
+
     @media only screen and (max-width: 700px) {
-      padding: 0.2rem;
+      margin: auto;
     }  
-
+    @media only screen and (min-width: 700px) {
+      margin: auto 4rem;
+    }
     @media only screen and (min-width: 1200px) {
-      margin: 0rem 8rem;
-    }  
-
-    @media only screen and (min-width: 2800px) {
-      margin: 0rem 16rem;
-    }  
+      margin: auto 10rem;
+    }
+    @media only screen and (min-width: 1800px) {
+      margin: auto 16rem;
+    }
 
     .item {
       width: 100%;
       display: flex; flex-direction: row;
-      margin: 0rem auto 2.5rem auto;
-      margin: 2rem;
+      margin: 2rem auto 2rem;
+      align-items: center;
+      justify-content: center;
 
-      @media only screen and (max-width: 700px) {
+
+      @media only screen and (max-width: 900px) {
             flex-direction: column;
-            margin: 0.5rem auto;
+            margin: 2rem auto;
             }  
 
         h1 {     
-        font-size: 2rem;
-        font-weight: 400;
-        line-height: 1.7rem;
-        height: auto;
-        /* overflow: hidden; */
-        text-align: center;
-        /* margin: 1rem auto 0; */
-        margin: auto;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-      
+          font-size: 2rem;
+          font-weight: 400;
+          line-height: 1.7rem;
+          height: auto;
+          text-align: left;
+          margin: 1rem auto 0.2rem 1rem;
+          padding: 0.05rem;
         }
 
         :last-child {
           padding-bottom: 12rem;
         }
+
     }
 
 
@@ -180,13 +197,31 @@ const ResponsiveFlex = styled.div`
     .gallery_item_details {
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+
+
     }
 
     #logo-container {
         width: auto;
         display: flex; flex-direction: row;
-        justify-content: center;
-        margin: 0 auto auto auto;
+        justify-content: right;
+        /* margin: 0 auto auto auto; */
+        margin-top: auto;
+        margin-bottom: 1rem;
+
+    }
+
+    #button-container {
+      height: 100%;
+      height: auto;
+      display: flex; flex-direction: row;
+      justify-content: right;
+      
+      button {
+          margin: auto;
+        }
     }
 
     .logo {
@@ -196,17 +231,17 @@ const ResponsiveFlex = styled.div`
     }
 
     #description {
-      text-align: center;
+      text-align: left;
       font-size: 1.3rem;
       overflow: hidden;
         height: 50%;
-        padding: 2rem 4rem 0rem;
-        margin: 0 4rem 1rem;
+        padding: 0.25rem;
+        /* margin: 0 4rem 1rem; */
+        margin: 0.25rem 1rem auto 1rem;
         @media only screen and (max-width: 700px) {
-          font-size: 0.8rem;
+          font-size: 1rem;
           height: auto;
-            margin: auto;
-            padding: 1rem;
+            padding: 0rem;
         }   
     }
 
