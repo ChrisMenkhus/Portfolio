@@ -70,10 +70,10 @@ export default function Projects(props) {
                       
 
                     <p id='description'>
-                      {showReadMore ? data.description[0].text : 
-                      TruncateString(115, data.description[0].text)}
-                      {data.description[0].text.length >= 115 ? '....' : ''}   
-                      <br/><br/>
+                      {showReadMore ? data.description[0].text : data.description[0].text.length > 115 ? 
+                      TruncateString(115, data.description[0].text) : data.description[0].text }
+                      {data.description[0].text.length >= 115 ? '.... ' : ' '}   
+                      
                       {data.description[0].text.length >= 115 ? 
                       <a onClick={()=>{SetShowReadMore(!showReadMore)}}>{showReadMore ? 'read less..' : 'read more..'}</a>: null }
                     </p>
@@ -224,7 +224,7 @@ const ResponsiveFlex = styled.div`
         margin-top: auto;
         margin-bottom: 1rem;
 
-      margin: 0 1rem 0.5rem auto;
+      margin: 1rem 1rem 0.5rem auto;
 
 
     }
