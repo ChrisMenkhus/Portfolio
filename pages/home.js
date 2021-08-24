@@ -49,7 +49,7 @@ export default function Home() {
           </Box>
           <Box margin='auto auto 0 auto' justify='flex-end'>
             <ul>
-            <li><MdDownload onClick={()=>window.open('https://docs.google.com/document/d/1eHd2vTMKE_DPJ53QVGX3gXprzzZJu4fhQ6hztDTzdDo/edit?usp=sharing')} className='icon' color='black'/></li>
+            <li><MdDownload onClick={()=>window.open('https://docs.google.com/document/d/17GMPd6Rm3f0BPTpqSF-DkY-KojQKCyqksZZfUw7l7zA/edit?usp=sharing')} className='icon' color='black'/></li>
             </ul>
           </Box>
         </FlexBox>
