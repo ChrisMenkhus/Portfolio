@@ -3,6 +3,7 @@ import Box from '../components/Box';
 import FlexBox from '../components/FlexBox';
 import Cta from '../components/Cta';
 import Button from '../components/Button';
+import LiquidButton from '../components/LiquidButton';
 import BottomButton from '../components/BottomButton';
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import IosMail from 'react-ionicons/lib/IosMail';
@@ -71,14 +72,9 @@ export default function Home() {
 						</ul>
 					</Box>
 				</FlexBox>
+				<LiquidButton handleClick={() => Redirect('/projects')}>PROJECTS</LiquidButton>
 			</main>
-			<BottomButton>
-				<FlexBox width="100%">
-					<Button margin="2rem auto 6rem auto" img={IosArrowForward} handleClick={() => Redirect('/projects')}>
-						Projects
-					</Button>
-				</FlexBox>
-			</BottomButton>
+
 			<style jsx>
 				{`
 					main {
