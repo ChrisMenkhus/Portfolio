@@ -34,12 +34,14 @@ export default function Layout({ children }) {
 						display: flex;
 					}
 					main {
-						display: flex;
-						width: 100%;
-						height: calc(100% - 3rem);
+						// display: flex;
+						// width: 100%;
+						// height: calc(100% - 3rem);
 						opacity: 0;
 						animation: fadein 2s forwards;
 						animation-delay: 0.5s;
+						margin: 0;
+						overflow: hidden;
 					}
 					#__next {
 						height: 100%;

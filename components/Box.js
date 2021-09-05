@@ -6,6 +6,7 @@ const Style = styled.div`
 	display: flex;
 	flex-direction: ${(p) => (p.flexdirection ? p.flexdirection : 'column')};
 	margin: ${(p) => (p.margin ? p.margin : 'auto')};
+	justify-content: ${(p) => (p.justify ? p.justify : 'center')};
 
 	label {
 		display: flex;

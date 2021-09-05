@@ -34,40 +34,40 @@ export default function Home() {
 						PROFESSIONAL <span>{'<CODER>'}</span> & UI/UX <span>DESIGNER</span>.
 					</h3>
 				</Cta>
-				<FlexBox width="100%" margin="2rem 0 0.3rem">
+				{/* <FlexBox width="100%" margin="2rem 0 0.3rem">
 					<Box justify="flex-start">
 						<label>Connect </label>
 					</Box>
 					<Box justify="flex-end">
 						<label>Resume</label>
 					</Box>
-				</FlexBox>
-				<FlexBox width="100%">
-					<Box margin="auto auto 0 auto" justify="flex-start">
-						<ul>
-							<LogoImg alt="Github" src="/icons/logo-github.svg" onClick={() => window.open('https://github.com/ChrisMenkhus')} />
-							<LogoImg
-								alt="linkedIn"
-								src="/icons/logo-linkedin.svg"
-								onClick={() => window.open('https://www.linkedin.com/in/chris-menkhus-ab27201a0/')}
-							/>
-							<LogoImg alt="Email" src="/icons/mail-outline.svg" onClick={() => window.open('mailto:menkhus.chris@gmail.com')} />
-						</ul>
+				</FlexBox> */}
+				<FlexBox width="100%" flexdirection="row" margin="2rem 0 0 0">
+					<Box flexdirection="row" width="auto" margin="auto">
+						{/* <Box>
+							<label>Connect </label>
+						</Box> */}
+						<LogoImg alt="Github" src="/icons/logo-github.svg" onClick={() => window.open('https://github.com/ChrisMenkhus')} />
+						<LogoImg
+							alt="linkedIn"
+							src="/icons/logo-linkedin.svg"
+							onClick={() => window.open('https://www.linkedin.com/in/chris-menkhus-ab27201a0/')}
+						/>
+						<LogoImg alt="Email" src="/icons/mail-outline.svg" onClick={() => window.open('mailto:menkhus.chris@gmail.com')} />
 					</Box>
-					<Box margin="auto auto 0 auto" justify="flex-end">
-						<ul>
-							<li>
-								<LogoImg
-									alt="Resume"
-									src="/icons/arrow-down-outline.svg"
-									onClick={() =>
-										window.open('https://docs.google.com/document/d/17GMPd6Rm3f0BPTpqSF-DkY-KojQKCyqksZZfUw7l7zA/edit?usp=sharing')
-									}
-									className="icon"
-									color="black"
-								/>
-							</li>
-						</ul>
+					<Box flexdirection="row" width="auto" margin="auto">
+						{/* <Box justify-content="right">
+							<label>Resume</label>
+						</Box> */}
+						<LogoImg
+							alt="Resume"
+							src="/icons/arrow-down-outline.svg"
+							onClick={() =>
+								window.open('https://docs.google.com/document/d/17GMPd6Rm3f0BPTpqSF-DkY-KojQKCyqksZZfUw7l7zA/edit?usp=sharing')
+							}
+							className="icon"
+							color="black"
+						/>
 					</Box>
 				</FlexBox>
 				<LiquidButton handleClick={() => Redirect('/Projects')}>PROJECTS</LiquidButton>

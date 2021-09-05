@@ -10,7 +10,7 @@ export default function LogoImg(p) {
 }
 
 const Style = styled.div`
-	margin: 0.5rem;
+	margin: 0.33rem;
 	position: relative;
 	height: 100%;
 	width: 100%;
