@@ -19,6 +19,10 @@ const Style = styled.div`
 		font-size: 1.3rem;
 		border: none;
 		transition: all 0.1s;
+
+		@media only screen and (max-width: 700px) {
+			width: 10rem;
+		}
 	}
 
 	span {

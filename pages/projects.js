@@ -5,6 +5,8 @@ import BottomButton from '../components/BottomButton';
 import MdArrowRoundBack from 'react-ionicons/lib/MdArrowDropleft';
 import IosCloseCircleOutline from 'react-ionicons/lib/IosCloseCircleOutline';
 import IosGlobeOutline from 'react-ionicons/lib/IosGlobeOutline';
+import LogoGithub from 'react-ionicons/lib/LogoGithub';
+
 import { useRouter } from 'next/router';
 import Prismic from 'prismic-javascript';
 import ImageBox from '../components/ImageBox';
@@ -75,14 +77,14 @@ export default function Projects(props) {
 											: data.description[0].text.length > 115
 											? TruncateString(115, data.description[0].text)
 											: data.description[0].text}
-										{data.description[0].text.length >= 115 ? '.... ' : ' '}
+										{data.description[0].text.length >= 115 ? (showReadMore ? '' : '...') : ''}
 
 										{data.description[0].text.length >= 115 ? (
 											<a
 												onClick={() => {
 													SetShowReadMore(!showReadMore);
 												}}>
-												{showReadMore ? 'read less..' : 'read more..'}
+												{showReadMore ? 'read less.' : 'read more.'}
 											</a>
 										) : null}
 									</p>
@@ -98,8 +100,13 @@ export default function Projects(props) {
 									</div>
 									<div id="button-container">
 										{data.websitelink.url ? (
-											<Button margin={'0'} handleClick={() => window.open(data.websitelink.url)} img={IosGlobeOutline}>
+											<Button margin={'auto'} handleClick={() => window.open(data.websitelink.url)} img={IosGlobeOutline}>
 												Visit
+											</Button>
+										) : null}
+										{data.githublink.url ? (
+											<Button margin={'0'} handleClick={() => window.open(data.githublink.url)} img={LogoGithub}>
+												View Code
 											</Button>
 										) : null}
 									</div>
@@ -222,6 +229,10 @@ const ResponsiveFlex = styled.div`
 		margin: 0 0.5rem 0 auto;
 
 		button {
+			margin: 0 0.5rem;
+			@media only screen and (max-width: 700px) {
+				margin: 0 0.2rem;
+			}
 		}
 	}
 
@@ -233,10 +244,8 @@ const ResponsiveFlex = styled.div`
 	#description {
 		text-align: left;
 		font-size: 1.3rem;
-		overflow: hidden;
 		height: 50%;
 		padding: 0.25rem;
-		/* margin: 0 4rem 1rem; */
 		margin: 0.25rem 1rem auto 1rem;
 
 		a {

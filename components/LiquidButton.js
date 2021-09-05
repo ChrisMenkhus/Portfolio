@@ -8,26 +8,52 @@ const Style = styled.div`
 	justify-content: center;
 	height: auto;
 	width: auto;
-
 	margin-top: 3rem;
+
+	.neomorph {
+		height: 2.5rem;
+		width: 12rem;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.neomorph:before,
+	.neomorph:after {
+		content: '';
+		height: 2.5rem;
+		width: 12rem;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.neomorph:before {
+		box-shadow: inset 0.4rem 0.4rem 0.5rem rgba(25, 25, 25, 0.1);
+	}
+
+	.neomorph:after {
+		box-shadow: inset -0.2rem -0.2rem 0.4rem rgba(248, 248, 255, 0.3);
+	}
 
 	button {
 		height: 2.5rem;
 		width: 12rem;
 		margin: auto;
 		padding: 0;
-		border: 1px solid rgb(248, 248, 255);
-		border-radius: 0px;
+		border: 0px solid rgb(248, 248, 255);
 		background-color: transparent;
 		font-size: 1.4rem;
 		letter-spacing: 0.07rem;
 		position: relative;
 		overflow: hidden;
-		box-shadow: -0.2rem -0.4rem 0.5rem rgba(255, 255, 255, 1);
 		transition: 0.5s;
+
+		border-radius: 0.3rem;
 	}
 	button:hover {
 		transform: scale(1.05);
+		box-shadow: inset -0.2rem -0.4rem 0.5rem rgba(0, 0, 0, 1);
 	}
 
 	button span {
@@ -38,6 +64,7 @@ const Style = styled.div`
 		color: black;
 		/* margin-left: 1rem; */
 		transition: 0.3s;
+		border-radius: 5px;
 	}
 	button .icon {
 		margin: auto;
@@ -52,9 +79,13 @@ const Style = styled.div`
 		width: 200px;
 		height: 200px;
 		background: #9105ff;
+		background: linear-gradient(80deg, #9105ff, #9120ee, #4900ff, #480063);
+		background-size: 200% 200%;
+		animation: gradientfade 1s ease infinite;
 
-		box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+		/* box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5); */
 		transition: 0.6s;
+		border-radius: 5px;
 	}
 	button:hover .liquid {
 		top: -40px;
@@ -94,6 +125,28 @@ const Style = styled.div`
 			transform: translate(-50%, -75%) rotate(360deg);
 		}
 	}
+	@keyframes gradientfade {
+		0% {
+			background-position: 41% 0%;
+		}
+		50% {
+			background-position: 60% 100%;
+		}
+		100% {
+			background-position: 41% 0%;
+		}
+	}
+	@-webkit-keyframes gradientfade {
+		0% {
+			background-position: 41% 0%;
+		}
+		50% {
+			background-position: 60% 100%;
+		}
+		100% {
+			background-position: 41% 0%;
+		}
+	}
 `;
 
 const LiquidButton = (p) => {
@@ -105,6 +158,7 @@ const LiquidButton = (p) => {
 					{/* <IosArrowForward className="icon" /> */}
 				</span>
 				<div class="liquid" />
+				<div class="neomorph" />
 			</button>
 		</Style>
 	);
