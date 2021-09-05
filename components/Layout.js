@@ -37,6 +37,9 @@ export default function Layout({ children }) {
 						display: flex;
 						width: 100%;
 						height: calc(100% - 3rem);
+						opacity: 0;
+						animation: fadein 2s forwards;
+						animation-delay: 0.5s;
 					}
 					#__next {
 						height: 100%;
@@ -54,6 +57,11 @@ export default function Layout({ children }) {
 						justify-content: center;
 						align-items: center;
 						height: calc(100% - (2rem));
+					}
+					@keyframes fadein {
+						to {
+							opacity: 1;
+						}
 					}
 				`}
 			</style>

@@ -5,6 +5,8 @@ import Cta from '../components/Cta';
 import Button from '../components/Button';
 import LiquidButton from '../components/LiquidButton';
 import BottomButton from '../components/BottomButton';
+import LogoImg from '../components/LogoImg';
+
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import IosMail from 'react-ionicons/lib/IosMail';
 import LogoLinkedin from 'react-ionicons/lib/LogoLinkedin';
@@ -43,25 +45,21 @@ export default function Home() {
 				<FlexBox width="100%">
 					<Box margin="auto auto 0 auto" justify="flex-start">
 						<ul>
-							<li>
-								<LogoGithub onClick={() => window.open('https://github.com/ChrisMenkhus')} className="icon" color="black" />
-							</li>
-							<li>
-								<LogoLinkedin
-									onClick={() => window.open('https://www.linkedin.com/in/chris-menkhus-ab27201a0/')}
-									className="icon"
-									color="black"
-								/>
-							</li>
-							<li>
-								<IosMail onClick={() => window.open('mailto:menkhus.chris@gmail.com')} className="icon" color="black" />
-							</li>
+							<LogoImg alt="Github" src="/icons/logo-github.svg" onClick={() => window.open('https://github.com/ChrisMenkhus')} />
+							<LogoImg
+								alt="linkedIn"
+								src="/icons/logo-linkedin.svg"
+								onClick={() => window.open('https://www.linkedin.com/in/chris-menkhus-ab27201a0/')}
+							/>
+							<LogoImg alt="Email" src="/icons/mail-outline.svg" onClick={() => window.open('mailto:menkhus.chris@gmail.com')} />
 						</ul>
 					</Box>
 					<Box margin="auto auto 0 auto" justify="flex-end">
 						<ul>
 							<li>
-								<MdDownload
+								<LogoImg
+									alt="Resume"
+									src="/icons/arrow-down-outline.svg"
 									onClick={() =>
 										window.open('https://docs.google.com/document/d/17GMPd6Rm3f0BPTpqSF-DkY-KojQKCyqksZZfUw7l7zA/edit?usp=sharing')
 									}
@@ -72,24 +70,10 @@ export default function Home() {
 						</ul>
 					</Box>
 				</FlexBox>
-				<LiquidButton handleClick={() => Redirect('/projects')}>PROJECTS</LiquidButton>
+				<LiquidButton handleClick={() => Redirect('/Projects')}>PROJECTS</LiquidButton>
 			</main>
 
-			<style jsx>
-				{`
-					main {
-						opacity: 0;
-						animation: fadein 2s forwards;
-						animation-delay: 0.5s;
-					}
-
-					@keyframes fadein {
-						to {
-							opacity: 1;
-						}
-					}
-				`}
-			</style>
+			<style jsx>{``}</style>
 		</>
 	);
 }

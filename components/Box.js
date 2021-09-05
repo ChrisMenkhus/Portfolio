@@ -4,7 +4,7 @@ const Style = styled.div`
 	width: ${(p) => (p.width ? p.width : '10rem')};
 	height: auto;
 	display: flex;
-	flex-direction: column;
+	flex-direction: ${(p) => (p.flexdirection ? p.flexdirection : 'column')};
 	margin: ${(p) => (p.margin ? p.margin : 'auto')};
 
 	label {
@@ -78,7 +78,7 @@ const Style = styled.div`
 
 const Box = (p) => {
 	return (
-		<Style width={p.width} margin={p.margin} justify={p.justify}>
+		<Style width={p.width} margin={p.margin} flexdirection={p.flexdirection} justify={p.justify}>
 			{p.children}
 		</Style>
 	);

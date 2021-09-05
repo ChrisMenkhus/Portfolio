@@ -8,7 +8,7 @@ My portfolio of projects made with **Nextjs**. This website was made to show off
 
 The styling of this project is handled by **styled-components** so the styles are nestled in with the code for that component. These are located in Portfolio/Components.
 
-The Nextjs project is rendering pages from Portfolio/pages through the App.js file. These 'pages' or react components each have the code to make that page possible. The Projects.js file contains the functions used to render the list of projects.
+The Nextjs project is rendering pages from **Portfolio/pages** through the App.js file. These 'pages' or react components each have the code to make that page possible. The **projects.js** (Portfolio/pages/projects.js) file contains the functions used to render the list of projects.
 
 ### Dependencies
 
