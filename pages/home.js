@@ -143,16 +143,6 @@ export default function Home(pageProps) {
 						</ContentBody>
 					</Page>
 				</PageBackgroundImage>
-				{/* <PageBackgroundImage ref={page4}>
-					<Page>
-						<ContentBody>
-							<div className="center_content">
-								<h3 className="page_label">04</h3>
-								<h1>Text Goes Here Fuck</h1>
-							</div>
-						</ContentBody>
-					</Page>
-				</PageBackgroundImage> */}
 			</main>
 
 			<style jsx>
