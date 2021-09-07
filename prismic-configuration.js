@@ -1,18 +1,16 @@
-import Prismic from 'prismic-javascript'
+import Prismic from 'prismic-javascript';
 
-export const apiEndpoint = 'https://chrismenkhus.cdn.prismic.io/api/v2'
-export const accessToken = ''
+export const apiEndpoint = 'https://chrismenkhus.cdn.prismic.io/api/v2';
+export const accessToken = '';
 
 // Client method to query documents from the Prismic repo
-export const Client = (req = null) => (
-  Prismic.client(apiEndpoint, createClientOptions(req, accessToken))
-)
+export const Client = (req = null) => Prismic.client(apiEndpoint, createClientOptions(req, accessToken));
 
 const createClientOptions = (req = null, prismicAccessToken = null) => {
-  const reqOption = req ? { req } : {}
-  const accessTokenOption = prismicAccessToken ? { accessToken: prismicAccessToken } : {}
-  return {
-    ...reqOption,
-    ...accessTokenOption,
-  }
-}
+	const reqOption = req ? { req } : {};
+	const accessTokenOption = prismicAccessToken ? { accessToken: prismicAccessToken } : {};
+	return {
+		...reqOption,
+		...accessTokenOption,
+	};
+};

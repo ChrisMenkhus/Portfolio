@@ -10,6 +10,10 @@ import Button from '../components/Button';
 import BottomButton from '../components/BottomButton';
 import ImageBox from '../components/ImageBox';
 import LiquidButton from '../components/LiquidButton';
+import Logo from '../components/Logo';
+import LogoImg from '../components/LogoImg';
+import Link from '../components/Link';
+import TextBox from '../components/TextBox';
 
 import MdArrowRoundBack from 'react-ionicons/lib/MdArrowDropleft';
 import IosCloseCircleOutline from 'react-ionicons/lib/IosCloseCircleOutline';
@@ -43,63 +47,75 @@ export default function Projects(props) {
 			</Head>
 			{/* this all needs refactored */}
 			<main>
-				<ResponsiveFlex>
+				<FlexBox flexdirection="column" width="100%" margin="auto">
 					{items.map((res, i) => {
 						let data = res.data;
 						const [showReadMore, SetShowReadMore] = useState();
 						return (
-							<div className="item">
-								<div
+							<FlexBox className="item" margin="2rem auto" flexdirection="column" width="100%">
+								<FlexBox
+									width="100%"
 									className="gallery_item"
 									onClick={() => {
 										setSelectedProject(res);
 									}}>
 									<ImageBox id="img_desktop" src={data.img_desktop.url} />
-								</div>
-								<div className="gallery_item_details">
-									<h1>{data.name[0].text}</h1>
+								</FlexBox>
+								<FlexBox flexdirection="column" className="gallery_item_details" width="100%">
+									<Box width="100%" margin="2rem auto 0 auto">
+										<TextBox>
+											<h1>{data.name[0].text}</h1>
 
-									<p id="description">
-										{showReadMore
-											? data.description[0].text
-											: data.description[0].text.length > 115
-											? TruncateString(115, data.description[0].text)
-											: data.description[0].text}
-										{data.description[0].text.length >= 115 ? (showReadMore ? '' : '...') : ''}
+											<p id="description">
+												{showReadMore
+													? data.description[0].text
+													: data.description[0].text.length > 115
+													? TruncateString(115, data.description[0].text)
+													: data.description[0].text}
+												{data.description[0].text.length >= 115 ? (showReadMore ? '' : '...') : ''}
 
-										{data.description[0].text.length >= 115 ? (
-											<a
-												onClick={() => {
-													SetShowReadMore(!showReadMore);
-												}}>
-												{showReadMore ? 'read less.' : 'read more.'}
-											</a>
-										) : null}
-									</p>
-
-									<div id="logo-container">
-										{data.stack[0].css ? <img className="logo" src="/icons/logo-css3.svg" color="black" /> : null}
-										{data.stack[0].html ? <img className="logo" src="/icons/logo-html5.svg" fill="black" /> : null}
-										{data.stack[0].js ? <img className="logo" src="/icons/logo-javascript.svg" /> : null}
-										{data.stack[0].react ? <img className="logo" src="/icons/logo-react.svg" /> : null}
-										{data.stack[0].express ? <img className="logo" src="/icons/logo-expressjs.svg" /> : null}
-										{data.stack[0].next ? <img className="logo" src="/icons/logo-nextjs.svg" /> : null}
-										{data.stack[0].node ? <img className="logo" src="/icons/logo-nodejs.svg" /> : null}
-									</div>
-									<div id="button-container">
+												{data.description[0].text.length >= 115 ? (
+													<Link
+														onClick={() => {
+															SetShowReadMore(!showReadMore);
+														}}>
+														{showReadMore ? ' read less' : ' read more'}
+													</Link>
+												) : null}
+											</p>
+										</TextBox>
+									</Box>
+									<Box width="100%" margin="2rem auto 0 auto">
+										<FlexBox flexdirection="row" width="10rem" margin="auto">
+											{data.stack[0].css ? <LogoImg className="logo" src="/icons/logo-css3.svg" color="black" alt="css" /> : null}
+											{data.stack[0].html ? <LogoImg className="logo" src="/icons/logo-html5.svg" fill="black" alt="html" /> : null}
+											{data.stack[0].js ? <LogoImg className="logo" src="/icons/logo-javascript.svg" alt="javascript" /> : null}
+											{data.stack[0].react ? <LogoImg className="logo" src="/icons/logo-react.svg" alt="react" /> : null}
+											{data.stack[0].express ? <LogoImg className="logo" src="/icons/logo-expressjs.svg" alt="expressjs" /> : null}
+											{data.stack[0].next ? <LogoImg className="logo" src="/icons/logo-nextjs.svg" alt="nextjs" /> : null}
+											{data.stack[0].node ? <LogoImg className="logo" src="/icons/logo-nodejs.svg" alt="nodejs" /> : null}
+										</FlexBox>
+									</Box>
+									<FlexBox flexdirection="row" width="100%" id="button-container" margin="2rem auto 0 auto">
 										{data.websitelink.url ? (
-											<Button margin={'auto'} handleClick={() => window.open(data.websitelink.url)} img={IosGlobeOutline}>
+											<Button
+												margin={data.githublink.url ? 'auto 1rem auto auto' : 'auto'}
+												handleClick={() => window.open(data.websitelink.url)}
+												img={IosGlobeOutline}>
 												Visit
 											</Button>
 										) : null}
 										{data.githublink.url ? (
-											<Button margin={'0'} handleClick={() => window.open(data.githublink.url)} img={LogoGithub}>
+											<Button
+												margin={data.websitelink.url ? 'auto auto auto 1rem' : 'auto'}
+												handleClick={() => window.open(data.githublink.url)}
+												img={LogoGithub}>
 												View Code
 											</Button>
 										) : null}
-									</div>
-								</div>
-							</div>
+									</FlexBox>
+								</FlexBox>
+							</FlexBox>
 						);
 					})}
 					<FlexBox width="100%" margin="auto">
@@ -107,7 +123,7 @@ export default function Projects(props) {
 							<LiquidButton handleClick={() => Redirect('/')}>HOME</LiquidButton>
 						</Box>
 					</FlexBox>
-				</ResponsiveFlex>
+				</FlexBox>
 			</main>
 
 			{/* <BottomButton>
@@ -130,6 +146,7 @@ function ReorderArrayOfProjects(originalArray) {
 	});
 	const correctorder = [
 		'Take Me With You',
+		'Portfolio',
 		'Electric Boogaloo Car Dealership',
 		'Dungeon Hero',
 		'Watch Order',
@@ -138,7 +155,6 @@ function ReorderArrayOfProjects(originalArray) {
 		'Be Martian',
 		'Color It X',
 		'Screen Grabber',
-		'Portfolio',
 	];
 	newArray.sort((a, b) => {
 		return correctorder.indexOf(a.data.name[0].text) - correctorder.indexOf(b.data.name[0].text);

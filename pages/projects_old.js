@@ -137,9 +137,6 @@ function ReorderArrayOfProjects(originalArray) {
 export async function getStaticProps(context) {
 	const req = context.req;
 
-	console.log('req');
-	console.log(req);
-
 	const projects = await Client(req).query(Prismic.Predicates.at('document.type', 'project'));
 
 	return {

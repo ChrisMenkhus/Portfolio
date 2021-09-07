@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Navbar from './Navbar';
 
 export default function Layout({ children }) {
 	return (
@@ -7,8 +6,11 @@ export default function Layout({ children }) {
 			<Head>
 				<link rel="icon" href="/favicon.ico" />
 				<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@299&display=swap" rel="stylesheet"></link>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
 			</Head>
-			<Navbar />
+			{/* <Navbar /> */}
 			{children}
 			<style jsx global>
 				{`
@@ -27,6 +29,7 @@ export default function Layout({ children }) {
 					html {
 						height: 100vh;
 						font-family: 'Epilogue', sans-serif;
+						scroll-behavior: smooth;
 					}
 					body {
 						height: 100%;
@@ -34,32 +37,85 @@ export default function Layout({ children }) {
 						display: flex;
 					}
 					main {
-						// display: flex;
-						// width: 100%;
-						// height: calc(100% - 3rem);
 						opacity: 0;
 						animation: fadein 2s forwards;
 						animation-delay: 0.5s;
 						margin: 0;
 						overflow: hidden;
+						min-height: calc(100vh - 2rem);
+						margin-bottom: 30vh;
+					}
+					.white {
+						color: white;
 					}
 					#__next {
 						height: 100%;
 						width: 100%;
 					}
-					.container {
-						width: auto;
-						min-height: 10vh;
-						max-height: 60rem;
-						max-width: 60rem;
-						margin: auto;
-						padding: 0 0.5rem;
+
+					button {
+						cursor: pointer;
+					}
+
+					.button_container {
+						margin-top: 2rem;
 						display: flex;
 						flex-direction: column;
-						justify-content: center;
-						align-items: center;
-						height: calc(100% - (2rem));
 					}
+
+					h1 {
+						font-family: Roboto;
+						font-style: normal;
+						font-weight: normal;
+						font-size: 32px;
+						line-height: 37px;
+						letter-spacing: -0.06em;
+						color: #000000;
+						text-align: left;
+					}
+
+					h2 {
+						font-family: Roboto;
+						font-style: normal;
+						font-weight: 100;
+						font-size: 24px;
+						line-height: 28px;
+						letter-spacing: -0.03em;
+
+						color: #000000;
+					}
+
+					h3 {
+						font-family: Roboto;
+						font-style: normal;
+						font-weight: normal;
+						font-size: 24px;
+						line-height: 28px;
+						letter-spacing: -0.1em;
+						color: #0e46b9;
+						text-align: left;
+					}
+
+					h4 {
+						font-family: Roboto;
+						font-style: normal;
+						font-weight: 300;
+						font-size: 18px;
+						line-height: 21px;
+						color: #0e46b9;
+					}
+
+					p {
+						font-family: Roboto;
+						font-style: normal;
+						font-weight: 300;
+						font-size: 24px;
+						line-height: 28px;
+						letter-spacing: -0.04em;
+						color: #000000;
+						text-align: left;
+					}
+
 					@keyframes fadein {
 						to {
 							opacity: 1;

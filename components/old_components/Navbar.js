@@ -10,7 +10,7 @@ export default function Navbar() {
 						<ActiveLink href="/">Home</ActiveLink>
 					</li>
 					<li>
-						<ActiveLink href="/Projects">Projects</ActiveLink>
+						<ActiveLink href="/projects">Projects</ActiveLink>
 					</li>
 				</ul>
 			</Style>

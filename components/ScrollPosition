@@ -1,0 +1,15 @@
+import { useState, useEffect } from 'react';
+
+export default function ScrollPosition(isOffset = false) {
+	const [scrollTop, setScrollTop] = useState();
+	useEffect(() => {
+		const onScroll = (e) => {
+			setScrollTop(e.target.documentElement.scrollTop - (isOffset ? window.innerHeight / 3 : window.innerHeight / 4));
+		};
+		window.addEventListener('scroll', onScroll);
+
+		return () => window.removeEventListener('scroll', onScroll);
+	}, [scrollTop]);
+
+	return scrollTop;
+}
