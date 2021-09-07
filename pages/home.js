@@ -66,7 +66,7 @@ export default function Home(pageProps) {
 								<h2>02</h2>
 							</li>
 							<li onClick={() => page3.current.scrollIntoView()}>
-								<label className={activePage == 2 ? 'active' : null}>Contact</label>
+								<label className={activePage == 2 ? 'active' : null}>Social</label>
 								<h2>03</h2>
 							</li>
 							{/* <li onClick={() => page4.current.scrollIntoView()}>
@@ -80,9 +80,12 @@ export default function Home(pageProps) {
 					<Page>
 						<ContentBody>
 							<div className="center_content">
-								<h3 className="page_label white">01</h3>
+								<h3 className="page_label">01</h3>
 								<h1>Christopher Menkhus</h1>
 								<p>Web Developer located in Colorado Springs</p>
+								<div>
+									<h6>React - Javascript - Nextjs - Frontend - SSR - Expressjs</h6>
+								</div>
 							</div>
 						</ContentBody>
 						<ContentBody>
@@ -104,24 +107,28 @@ export default function Home(pageProps) {
 						</ContentBody>
 					</Page>
 				</PageBackgroundImage>
-				<PageBackgroundImage active={activePage === 2} position="absolute" backgroundcolor="#111" ref={page3}>
+				<PageBackgroundImage active={activePage === 2} position="absolute" backgroundcolor="#0d0d0d" ref={page3}>
 					<Page>
 						<ContentBody>
 							<div className="center_content">
 								<h3 className="page_label">03</h3>
-								<h1 className="white">Contact</h1>
+								<h1 className="white">Social</h1>
+								<p className="white">
+									I'm always available to chat! Have a question?{' '}
+									<a onClick={() => window.open('mailto:menkhus.chris@gmail.com')}>Email me.</a>
+								</p>
 								<div className="button_container">
 									<SquareButton
 										backgroundcolor="white"
 										invertcolor={true}
 										onClick={() => window.open('https://www.linkedin.com/in/chris-menkhus-ab27201a0/')}>
-										<h4>LinkedIn</h4>
+										LinkedIn
 									</SquareButton>
 									<SquareButton backgroundcolor="white" invertcolor={true} onClick={() => window.open('mailto:menkhus.chris@gmail.com')}>
-										<h4>Email</h4>
+										Email
 									</SquareButton>
 									<SquareButton backgroundcolor="white" invertcolor={true} onClick={() => window.open('https://github.com/ChrisMenkhus')}>
-										<h4>Github</h4>
+										Github
 									</SquareButton>
 									<SquareButton
 										backgroundcolor="white"
@@ -129,7 +136,7 @@ export default function Home(pageProps) {
 										onClick={() =>
 											window.open('https://docs.google.com/document/d/17GMPd6Rm3f0BPTpqSF-DkY-KojQKCyqksZZfUw7l7zA/edit?usp=sharing')
 										}>
-										<h4>Resume</h4>
+										Resume
 									</SquareButton>
 								</div>
 							</div>

@@ -43,7 +43,6 @@ export default function Layout({ children }) {
 						margin: 0;
 						overflow: hidden;
 						min-height: calc(100vh - 2rem);
-						margin-bottom: 30vh;
 					}
 					.white {
 						color: white;
@@ -61,6 +60,11 @@ export default function Layout({ children }) {
 						margin-top: 2rem;
 						display: flex;
 						flex-direction: column;
+					}
+
+					a {
+						color: #0e46b9;
+						cursor: pointer;
 					}
 
 					h1 {
@@ -103,6 +107,30 @@ export default function Layout({ children }) {
 						font-size: 18px;
 						line-height: 21px;
 						color: #0e46b9;
+					}
+
+					h6 {
+						font-family: Roboto;
+						font-style: normal;
+						font-weight: normal;
+						font-size: 32px;
+						line-height: 37px;
+						letter-spacing: -0.06em;
+						color: #000000;
+						text-align: left;
+						opacity: 0.5;
+						background: -webkit-linear-gradient(right, white, black);
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+						max-width: 500px;
+						flex-wrap: none;
+						height: 37px;
+					}
+
+					@media only screen and (max-width: 900px) {
+						h6 {
+							font-size: 24px;
+						}
 					}
 
 					p {

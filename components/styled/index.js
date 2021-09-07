@@ -27,7 +27,7 @@ const PageBackgroundImage_Style = styled.div`
 
 	&:before {
 		content: '';
-		background-color: ${(p) => (p.backgroundcolor ? p.backgroundcolor : 'white')};
+		background-color: ${(p) => (p.backgroundcolor ? p.backgroundcolor : '#f8f8ff')};
 		background-image: url(${(p) => (p.src ? p.src : '')});
 		background-size: cover;
 		width: 100vw;

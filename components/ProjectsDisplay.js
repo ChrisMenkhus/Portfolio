@@ -15,8 +15,6 @@ export default function ProjectsDisplay(items, scrollTop) {
 		return truncString;
 	};
 
-	console.log(ScrollPosition());
-
 	return (
 		<>
 			<div>
@@ -47,6 +45,7 @@ export default function ProjectsDisplay(items, scrollTop) {
 
 					return (
 						<div
+							key={i}
 							ref={itemRef}
 							className="item"
 							className={ScrollPosition(true) > (itemRef.current ? itemRef.current.offsetTop : 99999) ? 'item active' : 'item'}>
@@ -125,15 +124,24 @@ export default function ProjectsDisplay(items, scrollTop) {
 					min-height: 20rem;
 					position: relative;
 					opacity: 0;
-					transition: opacity 1s;
+					transition: all 1s;
+				}
+
+				.item:hover {
 				}
 
 				a {
-					color: red;
+					color: #0e46b9;
 				}
 
 				.active {
 					opacity: 1;
+					transform: skewX(0deg);
+				}
+
+				.active img {
+					animation: moveImg alternate 10s infinite;
+					animation-timing-function: linear;
 				}
 
 				.item h2 {
@@ -143,7 +151,6 @@ export default function ProjectsDisplay(items, scrollTop) {
 
 				.item_img {
 					width: 100%;
-					max-width: 50%;
 					min-width: 14rem;
 
 					height: 14rem;
@@ -160,19 +167,37 @@ export default function ProjectsDisplay(items, scrollTop) {
 
 				.item_img img {
 					position: absolute;
-					left: 0;
-					bottom: 0;
+					left: -50%;
+					top: 0;
 					width: 500px;
 					height: auto;
-					transition: all 1s;
+					transition: all 0.1s;
 				}
 
 				.item_img:hover img {
-					left: -22%;
+					animation-play-state: paused;
+					transform: skew(0deg);
+				}
+
+				@keyframes moveImg {
+					0% {
+						left: 0%;
+					}
+					100% {
+						left: -100%;
+					}
+				}
+
+				@keyframes fadeIn {
+					0% {
+						opacity: 0;
+					}
+					100% {
+						opacity: 1;
+					}
 				}
 
 				.item_img:hover img:after {
-					height: 100%;
 				}
 
 				.item_details {
@@ -200,6 +225,8 @@ export default function ProjectsDisplay(items, scrollTop) {
 					align-items: left;
 					height: 100%;
 					width: auto;
+					opacity: 0;
+					animation: fadeIn 5s forwards;
 				}
 
 				.item_details_button > label {
