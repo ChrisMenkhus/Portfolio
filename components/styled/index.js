@@ -217,7 +217,7 @@ const Page_Style = styled.div`
 
 export function CircularButton(p) {
 	return (
-		<CircularButton_Style onClick={p.onClick}>
+		<CircularButton_Style onClick={p.onClick} rotate={p.rotate}>
 			<div className="icon" />
 		</CircularButton_Style>
 	);
@@ -226,7 +226,7 @@ const CircularButton_Style = styled.button`
 	height: 3rem;
 	width: 3rem;
 	border-radius: 100%;
-	border: 1px solid #000;
+	border: 0.1px solid #555;
 
 	background: transparent;
 	position: relative;
@@ -262,6 +262,7 @@ const CircularButton_Style = styled.button`
 		position: absolute;
 		top: 0;
 		transform: rotate(90deg);
+		transform: rotate(${(p) => (p.rotate ? p.rotate : '90deg')});
 	}
 `;
 
@@ -279,6 +280,13 @@ const ContentBody_Style = styled.div`
 		margin: auto;
 		width: 100%;
 		margin-top: 20vh;
+		h2 {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.bottom_margin {
+		margin-bottom: 4rem;
 	}
 
 	.page_label {

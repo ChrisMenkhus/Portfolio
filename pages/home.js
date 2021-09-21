@@ -76,7 +76,7 @@ export default function Home(pageProps) {
 						</ul>
 					</nav>
 				</NavContainer>
-				<PageBackgroundImage active={activePage === 0} position="fixed" gradient={true} src="/icons/pexels-erick-todd.jpg" ref={page1}>
+				<PageBackgroundImage active={activePage === 0} position="absolute" gradient={true} src="/icons/pexels-erick-todd.jpg" ref={page1}>
 					<Page>
 						<ContentBody>
 							<div className="center_content">
@@ -139,6 +139,10 @@ export default function Home(pageProps) {
 										Resume
 									</SquareButton>
 								</div>
+							</div>
+							<div className="bottom_content bottom_margin">
+								<h2 className="white">Jump to Projects</h2>
+								<CircularButton onClick={() => page2.current.scrollIntoView()} rotate="-90deg"></CircularButton>
 							</div>
 						</ContentBody>
 					</Page>

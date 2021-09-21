@@ -5,6 +5,7 @@ import ScrollPosition from '../components/ScrollPosition';
 import IosGlobeOutline from 'react-ionicons/lib/IosGlobeOutline';
 import LogoGithub from 'react-ionicons/lib/LogoGithub';
 import { SquareButton, CircularButton } from './styled';
+import DisplayImage from './DisplayImage';
 
 export default function ProjectsDisplay(items, scrollTop) {
 	const TruncateString = (length, str) => {
@@ -43,15 +44,17 @@ export default function ProjectsDisplay(items, scrollTop) {
 						);
 					};
 
+					const isActive = () => {
+						ScrollPosition(true) > (itemRef.current ? itemRef.current.offsetTop : 99999) ? true : false;
+					};
+
 					return (
 						<div
 							key={i}
 							ref={itemRef}
 							className="item"
 							className={ScrollPosition(true) > (itemRef.current ? itemRef.current.offsetTop : 99999) ? 'item active' : 'item'}>
-							<div className="item_img">
-								<img className="_img" src={data.img_desktop.url.toString()} />
-							</div>
+							<DisplayImage src={data.img_desktop.url.toString()} />
 							<div className="item_details">
 								<h2>{data.name[0].text}</h2>
 								<p>
